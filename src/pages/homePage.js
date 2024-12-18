@@ -62,7 +62,7 @@ function HomePage() {
     <div>
       {/* Header Section */}
       <header className="App-header">
-        <div className="logo">my project</div>
+        <div className="logo">(KO) my project</div>
         <nav className="nav-menu">
           <Link to="/get-started">사용 가이드</Link>
           <a href="#github">요금제</a>
@@ -89,6 +89,16 @@ function HomePage() {
             />
           </div>
         </section>
+
+        {/* Transcription Result Section */}
+        {loading ? (
+          <p>변환 중입니다... 잠시만 기다려 주세요.</p>
+        ) : transcription ? (
+          <div style={{ marginTop: '20px', marginBottom: '20px', padding: '10px', backgroundColor: '#f3f3f3', borderRadius: '5px' }}>
+            <h3>변환된 텍스트:</h3>
+            <p>{transcription}</p>
+          </div>
+        ) : null}
 
         {/* Cards Section */}
         <section className="cards">
@@ -120,6 +130,19 @@ function HomePage() {
           </div>
         </section>
       </main>
+
+      {/* Footer Section */}
+      <footer style={{ 
+        backgroundColor: '#000', 
+        color: '#fff', 
+        textAlign: 'center', 
+        padding: '20px', 
+        marginTop: '20px' 
+      }}>
+        <p>&copy; 2024 My Project. All Rights Reserved.</p>
+        <p>문의사항: <a href="mailto:akfls367@naver.com" style={{ color: '#fff', textDecoration: 'underline' }}>akfls367@naver.com</a></p>
+      </footer>
+
     </div>
   );
 }
